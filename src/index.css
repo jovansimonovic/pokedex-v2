@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* custom colors, fonts and breakpoints */
+@theme {
+  --color-primary: #ef5350;
+}
+
+/* custom base styles (override or extend HTML elements) */
+@layer base {
+  body {
+    @apply bg-gray-200;
+  }
+}
+
+/* custom components */
+@layer components {
+  .navbar {
+    @apply bg-red-600 text-white flex justify-between items-center px-4 py-2;
+
+    & .logo {
+      @apply flex gap-2 items-center text-2xl cursor-pointer px-2 py-1 rounded-md;
+
+      &:hover {
+        @apply bg-red-700 transition duration-200;
+      }
+    }
+
+    & ul {
+      @apply flex gap-1 text-lg font-semibold;
+
+      & li {
+        @apply cursor-pointer px-2 py-1 rounded-md;
+
+        &:hover {
+          @apply bg-red-700 transition duration-200;
+        }
+      }
+    }
+  }
+}
+
+/* custom utilities */
+@layer utilities {
+}
